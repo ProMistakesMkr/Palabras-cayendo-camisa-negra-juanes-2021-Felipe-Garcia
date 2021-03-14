@@ -36,7 +36,7 @@ public class Main extends PApplet {
 		for (int k = 0; k < words.size(); k++) {
 			fill (255);
 			textSize(10);
-			text(words.get(k), random(20, 580), random(20, 580));
+			text(words.get(k), random(10, 350), random(10, 350));
 			System.out.println(words.get(k));
 			}
 		}
