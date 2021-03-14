@@ -6,8 +6,9 @@ function preload(){
 
 function setup() {
   createCanvas(400, 400);
-    background(220);
+    background(0);
   console.log(texts);
+   fill(255);
   for (let index = 0; index < texts.length; index++) {
     let arrayWords = texts[index].split(' '); 
     for (let index = 0; index < arrayWords.length; index++) {
