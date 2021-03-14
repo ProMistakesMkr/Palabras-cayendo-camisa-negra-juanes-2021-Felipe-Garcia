@@ -1,15 +1,20 @@
+import java.util.ArrayList;
+
 import processing.core.PApplet;
 
-public class Principal extends PApplet{
+public class Main extends PApplet{
 
 	public static void main(String[] args) {
-		PApplet.main("Principal");
+		PApplet.main("Main");
 		
 	}
 	
+	private String text;
+	private ArrayList<Main> words;
+	
 	@Override
 	public void settings() {
-		size(1200,700);
+		size(400,400);
 	}
 	
 
