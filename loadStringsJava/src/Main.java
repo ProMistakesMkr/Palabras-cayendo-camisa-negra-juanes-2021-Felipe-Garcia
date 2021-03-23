@@ -1,6 +1,4 @@
 import java.util.ArrayList;
-import java.util.Iterator;
-
 import processing.core.PApplet;
 
 public class Main extends PApplet {
@@ -24,7 +22,7 @@ public class Main extends PApplet {
 	}
 
 	public void setup() {
-		frameRate(10);
+		frameRate(20);
 		background(0);
 		texts = loadStrings("./data/strings.txt");
 		for (int i = 0; i < texts.length; i++) {
