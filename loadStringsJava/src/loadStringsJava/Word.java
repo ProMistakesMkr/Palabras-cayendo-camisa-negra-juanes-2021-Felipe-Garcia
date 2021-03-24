@@ -15,7 +15,7 @@ public class Word {
 
 	public void pintar(PApplet app) {
 		app.text(word, x, y);
-		y++;
+		y+=20;
 	}
 
 	public int getX() {
@@ -36,7 +36,7 @@ public class Word {
 		return word;
 	}
 
-	public void setword(String word) {
+	public void setWord(String word) {
 		this.word = word;
 	}
 }

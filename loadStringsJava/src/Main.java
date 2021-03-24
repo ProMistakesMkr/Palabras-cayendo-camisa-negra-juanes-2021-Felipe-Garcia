@@ -1,12 +1,13 @@
 import java.util.ArrayList;
+import loadStringsJava.Word;
 import processing.core.PApplet;
 
 public class Main extends PApplet {
 
 	String[] texts;
 	// ArrayList<String>arrayWords;
-	ArrayList<String> words = new ArrayList<>();
-	String palabra = "";
+	ArrayList<Word> words = new ArrayList<>();
+	Word palabra;
 	int numero = 0;
 
 
@@ -22,46 +23,44 @@ public class Main extends PApplet {
 	}
 
 	public void setup() {
-		frameRate(20);
+		frameRate(60);
 		background(0);
 		texts = loadStrings("./data/strings.txt");
+		
 		for (int i = 0; i < texts.length; i++) {
 			String[] arrayWords = texts[i].split(" ");
 			
 			for (int j = 0; j < arrayWords.length; j++) {
-				words.add(arrayWords[j]);	
-				
-
+				words.add(new Word ( (int)random(10, 350), (int)random(10, 350), arrayWords[j]));	
 			}
 		}
 
 			
-		
+		fill(255);
+		textSize(10);
 		
 	}
 
 	public void draw() {
 		
-
 		
 		if (frameCount % 10 == 0) { 
-			
+			background(0);
 			for (int k = 0; k < words.size(); k++) {
 
-					palabra = words.get(numero);
+				if(k < numero) {
+					palabra = words.get(k);
+					palabra.pintar(this);
+				}
 				
 			}
 			
-			fill(255);
-			textSize(10);
-			text(palabra, random(10, 350), random(10, 350)); 
+			
 			numero ++;
 
 		
 		}
 		
-
-
 
 	}
 }
