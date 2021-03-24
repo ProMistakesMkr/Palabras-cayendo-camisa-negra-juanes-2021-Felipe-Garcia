@@ -5,19 +5,32 @@ import processing.core.PApplet;
 public class Word {
 	int x;
 	int y;
+	boolean dragged;
 	String word;
 
 	public Word(int x, int y, String word) {
 		this.x = x;
 		this.y = y;
 		this.word = word;
+		dragged = false;
 	}
 
 	public void pintar(PApplet app) {
-		app.text(word, x, y);
-		y+=20;
+		if(dragged) {
+			app.text(word, app.mouseX, app.mouseY);
+		} else {
+			app.text(word, x, y);
+		}
+		
+		y += 20;
 	}
 
+	public void wordClicked(PApplet app) {
+		if(app.dist(this.x, this.y, app.mouseX, app.mouseY) < 20) {
+			dragged = true;
+		}
+	}
+	
 	public int getX() {
 		return x;
 	}
@@ -25,6 +38,7 @@ public class Word {
 	public void setX(int x) {
 		this.x = x;
 	}
+
 	public int getY() {
 		return y;
 	}
@@ -32,11 +46,20 @@ public class Word {
 	public void setY(int y) {
 		this.y = y;
 	}
+
 	public String getWord() {
 		return word;
 	}
 
 	public void setWord(String word) {
 		this.word = word;
+	}
+
+	public boolean isDragged() {
+		return dragged;
+	}
+
+	public void setDragged(boolean dragged) {
+		this.dragged = dragged;
 	}
 }
