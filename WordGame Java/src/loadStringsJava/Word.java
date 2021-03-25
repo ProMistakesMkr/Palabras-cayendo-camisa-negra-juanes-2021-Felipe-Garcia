@@ -1,6 +1,7 @@
 package loadStringsJava;
 
 import processing.core.PApplet;
+import processing.core.PConstants;
 
 public class Word {
 	int x;
@@ -17,12 +18,21 @@ public class Word {
 
 	public void pintar(PApplet app) {
 		if(dragged) {
+			app.textAlign(PConstants.LEFT);
 			app.text(word, app.mouseX, app.mouseY);
 		} else {
 			app.text(word, x, y);
 		}
 		
 		y += 20;
+		
+		if(y>400) {
+			y=0;
+		}
+	}
+	
+	public void pintarMatch(PApplet app) {
+		app.text(word,x, y);
 	}
 
 	public void wordClicked(PApplet app) {
@@ -50,7 +60,7 @@ public class Word {
 	public String getWord() {
 		return word;
 	}
-
+// estado - retorno - nombre (param)
 	public void setWord(String word) {
 		this.word = word;
 	}
