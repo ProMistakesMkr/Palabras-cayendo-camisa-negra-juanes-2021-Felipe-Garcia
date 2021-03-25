@@ -26,7 +26,7 @@ public class Word {
 		
 		y += 20;
 		
-		if(y>400) {
+		if(y>550) {
 			y=0;
 		}
 	}
@@ -37,7 +37,7 @@ public class Word {
 
 	public void wordClicked(PApplet app) {
 		if(app.dist(this.x, this.y, app.mouseX, app.mouseY) < 20) {
-			dragged = true;
+			dragged = !true;
 		}
 	}
 	
